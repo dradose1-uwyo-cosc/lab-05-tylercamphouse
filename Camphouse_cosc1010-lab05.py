@@ -93,12 +93,11 @@ min_temps = [
 # The use of len() is fine
 # You can do this in two individual loops, or a single loop if you wish 
 
-max_temp = max_temps[0]  # Start with the first element as the initial maximum
+max_temp = 0
+min_temp = 0
 for i in max_temps:
     if i > max_temp:
       max_temp = i
-
-min_temp = min_temps[-1]  # Start with the first element as the initial maximum
 for i in min_temps:
     if i < min_temp:
       min_temp = i
@@ -117,9 +116,9 @@ zero_count = 0
 for number in numbers:
     if number > 0:
         pos_count += 1
-    elif number < 0:
+    if number < 0:
         neg_count += 1
-    elif number == 0:
+    if number == 0:
         zero_count += 1
 
 print(f'There are {pos_count} positive numbers')
@@ -133,7 +132,7 @@ neg_sum = 0
 for number in numbers:
     if number > 0:
         pos_sum += number
-    elif number < 0:
+    if number < 0:
         neg_sum += number
 
 print(f"Sum of positive numbers {pos_sum}")
